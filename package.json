@@ -1,6 +1,6 @@
 {
   "name": "azdo-cancel-previous-builds",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Cancels all previous Azure Devops builds. Meant to be run from an Azure Devops pipeline",
   "main": "dist/index.js",
   "bin": "dist/cli.js",
