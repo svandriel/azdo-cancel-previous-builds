@@ -20,10 +20,15 @@
   "keywords": [
     "azure devops",
     "build",
-    "cancel"
+    "cancel",
+    "build"
   ],
   "author": "Sander van Driel <sander.vandriel@gmail.com>",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/svandriel/azdo-cancel-previous-builds"
+  },
   "dependencies": {
     "azure-devops-node-api": "^11.2.0",
     "commander": "^9.4.0",
