@@ -1,5 +1,7 @@
 # azdo-cancel-previous-builds
 
+[![Node.js CI](https://github.com/svandriel/azdo-cancel-previous-builds/actions/workflows/node.js.yml/badge.svg)](https://github.com/svandriel/azdo-cancel-previous-builds/actions/workflows/node.js.yml)
+
 This is a command-line script that will cancel any previous in-progress
 Azure Devops builds.
 
@@ -31,14 +33,16 @@ Since the `System.AccessToken` is a secret variable, you need to explitly add it
 _Note: The access token needs to have the 'read builds' and 'update builds' permission.  
 You can also use a custom access token that has these permissions._
 
-The script requires these environment variables:
+The script requires these environment variables, which should be present in the context
+of an Azure Devops build:
 
 - `System.TeamFoundationCollectionUri`: The base URL to the Azure Devops collection
 - `System.TeamProject`: The name of the project
 - `System.DefinitionId`: The ID of the build definition
-- `System.AccessToken`: A private access token
 - `Build.BuildId`: The ID of the current build
 - `Build.SourceBranch`: The current source code branch being built
+- `System.AccessToken`: A private access token  
+   _This one needs to be explitly added like in the example above._
 
 ## Development
 
