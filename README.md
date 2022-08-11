@@ -21,7 +21,24 @@ From your Azure Devops pipeline, include a script task to include Node (v10 or u
   inputs:
     versionSpec: 17.x
 - script: npx azdo-cancel-previous-builds
+  displayName: Cancel previous builds
+  env:
+    System.AccessToken: $(System.AccessToken)
 ```
+
+Since the `System.AccessToken` is a secret variable, you need to explitly add it to make it available.
+
+_Note: The access token needs to have the 'read builds' and 'update builds' permission.  
+You can also use a custom access token that has these permissions._
+
+The script requires these environment variables:
+
+- `System.TeamFoundationCollectionUri`: The base URL to the Azure Devops collection
+- `System.TeamProject`: The name of the project
+- `System.DefinitionId`: The ID of the build definition
+- `System.AccessToken`: A private access token
+- `Build.BuildId`: The ID of the current build
+- `Build.SourceBranch`: The current source code branch being built
 
 ## Development
 
